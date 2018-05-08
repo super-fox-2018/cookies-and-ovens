@@ -23,7 +23,7 @@ class Kue{
         for(let a = 1; a <= this._time; a++){
             if(a%5 === 0 ){
                 countStatus += 1
-                console.log('kue coklat, menit ke '+ a +' : '+status[countStatus])
+                console.log(this._name +  ' menit ke '+ a +' : '+status[countStatus])
             }
         }
 
