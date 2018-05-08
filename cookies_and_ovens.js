@@ -10,31 +10,29 @@
 // Your code here
 
 class Cookie {
-  constructor() {
+  constructor(name) {
     this.status = 'raw';
+    this.name = name
   }
 }
 
 class ChocolateChipCookie extends Cookie {
-  constructor() {
-    super();
-    this.name = 'Chocolate Chip Cookie';
+  constructor(name) {
+    super(name);
     this.cookedTime = 20;
   }
 }
 
 class PeanutButterCookie extends Cookie {
-  constructor() {
-    super();
-    this.name = 'Peanut Butter Cookie';
+  constructor(name) {
+    super(name);
     this.cookedTime = 25;
   }
 }
 
 class DoubleChocolateCookie extends Cookie {
-  constructor() {
-    super();
-    this.name = 'Double Chocolate Cookie';
+  constructor(name) {
+    super(name);
     this.cookedTime = 30;
   }
 }
@@ -71,9 +69,9 @@ class Oven {
 
 // driver code
 let oven = new Oven();
-let chocolateChipCookie = new ChocolateChipCookie();
-let peanutButterCookie = new PeanutButterCookie();
-let doubleChocolateCookie = new DoubleChocolateCookie();
+let chocolateChipCookie = new ChocolateChipCookie('Chocolate Chip Cookie');
+let peanutButterCookie = new PeanutButterCookie('Peanut Butter Cookie');
+let doubleChocolateCookie = new DoubleChocolateCookie('Double Chocolate Cookie');
 
 oven.insertCookie(chocolateChipCookie);
 oven.insertCookie(peanutButterCookie);
