@@ -48,15 +48,19 @@ class Oven{
 				for(var j=0;j<temp.length;j++){
 				if (i<=10) {
 					console.log(`kue ${temp[j]._name} menit ke ${i} : mentah `)
+					console.log('')
 				}
 				else if (i>=10 && i<temp[j]._matang) {
 					console.log(`kue ${temp[j]._name} menit ke ${i} : hampir matang`)
+					console.log('')
 				}
 				else if (i===temp[j]._matang) {
 					console.log(`kue ${temp[j]._name} menit ke ${i} : matang`)
+					console.log('')
 				}
-				else if (i>temp[j]._matang) {
-					console.log(`kue ${temp[j]._name} menit ke ${i} : hangus`)
+				else if (i>temp[j]._matang && i<=temp[j]._matang+5) {
+					console.log(`kue ${temp[j]._name} menit ke ${i} : kue sudah dikeluarkan`)
+					console.log('')
 				}
 			}	
 		}
@@ -74,5 +78,5 @@ oven.insert(coklat)
 oven.insert(peanut)
 oven.insert(cheese)
 console.log(oven)
-oven.bake(20)
+oven.bake(45)
 // oven.bake([coklat,peanut,cheese],60)
