@@ -8,3 +8,75 @@
 //
 //
 // Your code here
+class Cake{
+	constructor(name,matang){
+		this._name = name
+		this._matang = matang
+	}
+}
+class CoklatCake extends Cake{
+	constructor(){
+		super('cokelat',20)
+		//this._name = name
+	}
+}
+
+class PeanutCake extends Cake{
+	constructor(){
+		super('peanut',30)
+	}
+}
+
+class CheeseCake extends Cake{
+	constructor(){
+		super('cheese',35)
+
+	}
+}
+class Oven{
+	constructor(){
+		this._loyang = []
+	}
+	insert(cake){
+		this._loyang.push(cake)
+	}
+	bake(bakeTime){
+		let temp = this._loyang
+		//console.log(temp)	
+			//console.log(temp[j])
+			for(var i=5;i<=bakeTime;i+=5){
+				for(var j=0;j<temp.length;j++){
+				if (i<=10) {
+					console.log(`kue ${temp[j]._name} menit ke ${i} : mentah `)
+					console.log('')
+				}
+				else if (i>=10 && i<temp[j]._matang) {
+					console.log(`kue ${temp[j]._name} menit ke ${i} : hampir matang`)
+					console.log('')
+				}
+				else if (i===temp[j]._matang) {
+					console.log(`kue ${temp[j]._name} menit ke ${i} : matang`)
+					console.log('')
+				}
+				else if (i>temp[j]._matang && i<=temp[j]._matang+5) {
+					console.log(`kue ${temp[j]._name} menit ke ${i} : kue sudah dikeluarkan`)
+					console.log('')
+				}
+			}	
+		}
+	}
+}
+		
+
+let coklat = new CoklatCake('coklat')
+let peanut = new PeanutCake('peanut')
+let cheese = new CheeseCake('cheese')
+let oven = new Oven()
+//console.log([coklat,peanut,cheese])
+//console.log(coklat)
+oven.insert(coklat)
+oven.insert(peanut)
+oven.insert(cheese)
+console.log(oven)
+oven.bake(45)
+// oven.bake([coklat,peanut,cheese],60)
